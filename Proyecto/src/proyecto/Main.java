@@ -9,7 +9,7 @@ package proyecto;
  *
  * @author limberth
  */
-public class Proyecto {
+public class Main {
 
     /**
      * @param args the command line arguments
