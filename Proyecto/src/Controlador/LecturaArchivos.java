@@ -1,3 +1,5 @@
+package Controlador
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -35,7 +37,7 @@ public class LecturaArchivo{
               e2.printStackTrace();
            }
         }    
-        //return ¿qué?
+        //return Â¿quÃ©?
     }
     
     
