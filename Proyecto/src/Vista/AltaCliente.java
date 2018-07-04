@@ -71,6 +71,12 @@ public class AltaCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre de Usuario:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        nUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nUserActionPerformed(evt);
+            }
+        });
         getContentPane().add(nUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 204));
@@ -117,6 +123,10 @@ public class AltaCliente extends javax.swing.JFrame {
     private void TelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TelActionPerformed
+
+    private void nUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nUserActionPerformed
 
     /**
      * @param args the command line arguments

@@ -24,6 +24,9 @@ public class Login extends javax.swing.JFrame {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/github-256-black.png"));
         return retValue;
     }
+ 
+ public static String Texto1="";
+ public static String Texto2="";
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,6 +100,11 @@ public class Login extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(0, 0, 51));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Iniciar Sesión");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, -1, 20));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1920x1080-color-background-surface-solid-wallpaper-wpt100934.jpg"))); // NOI18N
@@ -117,6 +125,11 @@ public class Login extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    Texto1=this.jTextField1.getText();
+    Texto2=this.jPasswordField1.getText();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,4 +184,8 @@ return jTextField1.getText();
 public String getPassword(){
     return jPasswordField1.getText();
 }
+void agregarMul(){
+    
+}
+
 }
