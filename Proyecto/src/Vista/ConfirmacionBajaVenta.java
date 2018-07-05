@@ -11,12 +11,12 @@ package Vista;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTable;
-public class AltaVentas extends javax.swing.JFrame {
+public class ConfirmacionBajaVenta extends javax.swing.JFrame {
 
     /**
      * Creates new form Ventas
      */
-    public AltaVentas() {
+    public ConfirmacionBajaVenta() {
         initComponents();
         
     }
@@ -110,20 +110,10 @@ public class AltaVentas extends javax.swing.JFrame {
 
         jLabel8.setText("Teléfono:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
-
-        TxtNombre.setText("ejemplo");
-        getContentPane().add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 250, 20));
-
-        TxtRFC.setText("ejemplo");
-        getContentPane().add(TxtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 250, 20));
-
-        TxtTelefono.setText("ejemplo");
-        getContentPane().add(TxtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 180, -1));
-
-        TxtDireccion.setText("ejemplo");
-        getContentPane().add(TxtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 180, -1));
-
-        TxtRazon.setText("ejemplo");
+        getContentPane().add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 250, 10));
+        getContentPane().add(TxtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 250, 10));
+        getContentPane().add(TxtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 180, 20));
+        getContentPane().add(TxtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, 10));
         getContentPane().add(TxtRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 180, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -177,10 +167,10 @@ public class AltaVentas extends javax.swing.JFrame {
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, -1, -1));
 
         jLabel10.setText("ID:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 110, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 130, -1, -1));
 
         TxtID.setText(" ");
-        getContentPane().add(TxtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(1515, 110, 90, -1));
+        getContentPane().add(TxtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 130, 160, -1));
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/515958.jpg"))); // NOI18N
@@ -206,21 +196,23 @@ public class AltaVentas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AltaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfirmacionBajaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AltaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfirmacionBajaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AltaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfirmacionBajaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AltaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfirmacionBajaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AltaVentas().setVisible(true);
+                new ConfirmacionBajaVenta().setVisible(true);
             }
         });
     }
@@ -242,7 +234,7 @@ public class AltaVentas extends javax.swing.JFrame {
     }
 
     public void setID(String TxtID) {
-        this.TxtID.setText(TxtID);
+        this.TxtID.setText(TxtID); 
     }
 
     
