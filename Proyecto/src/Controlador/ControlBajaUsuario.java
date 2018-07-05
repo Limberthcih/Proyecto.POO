@@ -3,6 +3,10 @@ package Controlador;
 import Proyecto.Vista.Bajas;
 import java.util.Scanner;
 
+public class ControlBajaUsuario{
+        //Variiables
+        //https://www.youtube.com/watch?v=8_N1WUepK_U
+        
         public void EliminarUsuario(String nombre, String clave){
         ArrayList<String> buscador = new ArrayList<String>; //Se debe meter el id por aquí
         FileWriter fr = null;
