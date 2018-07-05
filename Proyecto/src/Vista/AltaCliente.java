@@ -36,17 +36,17 @@ public class AltaCliente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         BarrrasInferior = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nUser = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Título = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Razon = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        RFC = new javax.swing.JTextField();
+        Dir = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        Tel = new javax.swing.JTextField();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +71,13 @@ public class AltaCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre de Usuario:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
+
+        nUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Registrar");
@@ -83,19 +89,25 @@ public class AltaCliente extends javax.swing.JFrame {
 
         jLabel4.setText("Razón social:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 200, -1));
+        getContentPane().add(Razon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 200, -1));
 
         jLabel5.setText("RFC:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, -1));
+        getContentPane().add(RFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
+        getContentPane().add(Dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, -1));
 
         jLabel6.setText("Dirección:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         jLabel7.setText("Telefono:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 200, -1));
+
+        Tel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 200, -1));
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/515958.jpg"))); // NOI18N
@@ -107,6 +119,14 @@ public class AltaCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelActionPerformed
+
+    private void nUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +165,11 @@ public class AltaCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BarrrasInferior;
+    private javax.swing.JTextField Dir;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JTextField RFC;
+    private javax.swing.JTextField Razon;
+    private javax.swing.JTextField Tel;
     private javax.swing.JLabel Título;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -154,10 +178,22 @@ public class AltaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField nUser;
     // End of variables declaration//GEN-END:variables
+
+public String GetDireccion(){
+    return Dir.getText();
+} 
+public String GetRFC(){
+    return RFC.getText();
+}
+public String GetRazon(){
+    return Razon.getText();
+}
+public String GetTel(){
+    return Tel.getText();
+}
+public String NombreUsuario(){
+    return nUser.getText();
+}
 }
