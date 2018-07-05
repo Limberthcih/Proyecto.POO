@@ -40,7 +40,7 @@ public class ControlBajaUsuario{
         try{
             fr = new FileWriter(nombre);
             br = new PrintdWriter(fr);
-            for(String rfc:buscador){
+            for(String id:buscador){
                 if(usuario.nombre==id){
                     pw.println(usuario.nombre + "\t"+usuario.contraseña + "\t"+ usuario.rol+ "\r\n");
                 }
