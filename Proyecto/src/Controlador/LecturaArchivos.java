@@ -49,7 +49,7 @@ public class LecturaArchivo{
         	fichero = new FileWriter("archivo.txt");
            	pw = new PrintWriter(fichero);
  
-           	System.out.println("Escribiendo en el archivo.txt");
+           	System.out.println("Escribiendo en el archivo");
            	pw.println(Archivo);
  
         } catch (Exception e) {
