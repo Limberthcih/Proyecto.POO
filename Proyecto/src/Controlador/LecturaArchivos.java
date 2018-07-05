@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 
 public class LecturaArchivo{
-    private String Archivo
+    private String Archivo;
+    private ArrayList<String> ed;
     
-    public ArrayList<Archivo> LeerArchivo(){
+    public ArrayList<Archivo> LeerArchivo(String nombre){
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -15,7 +16,7 @@ public class LecturaArchivo{
         try {
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			archivo = new File ("archivo.txt");
+			archivo = new File (nombre);
 			fr = new FileReader (archivo);
 			br = new BufferedReader(fr);
  
@@ -37,7 +38,7 @@ public class LecturaArchivo{
               e2.printStackTrace();
            }
         }    
-        //return ¿qué?
+        return ed;
     }
     
     
