@@ -39,7 +39,7 @@ public class ControlBajaProducto{
         try{
             fr = new FileWriter(nombre);
             br = new PrintdWriter(fr);
-            for(String rfc:buscador){
+            for(String id:buscador){
                 if(productos.clave==id){
                     pw.println(productos.clave + "\t"+productos.descripcion+ "\t"+ productos.preciounitario+ "\t"+ productos.cantidad+"\r\n");
                 }
