@@ -42,12 +42,12 @@ public class LecturaArchivo{
     }
     
     
-    public void EscrituraArchivo(String Archivo){
+    public void EscrituraArchivo(String Archivo, String nombre){
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
         {
-        	fichero = new FileWriter("archivo.txt");
+        	fichero = new FileWriter(nombre);
            	pw = new PrintWriter(fichero);
  
            	System.out.println("Escribiendo en el archivo");
