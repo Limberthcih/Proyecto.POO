@@ -6,6 +6,7 @@
 package Vista;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -36,13 +37,13 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         BarrrasInferior = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        TXTNombreUser = new javax.swing.JTextField();
+        TXTNombreUsuario = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Título = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        TXTPassword = new javax.swing.JPasswordField();
-        TXTPassword2 = new javax.swing.JPasswordField();
+        TXTContrasena = new javax.swing.JPasswordField();
+        TXTContrasena2 = new javax.swing.JPasswordField();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,12 +69,12 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jLabel1.setText("Nombre de Usuario:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-        TXTNombreUser.addActionListener(new java.awt.event.ActionListener() {
+        TXTNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTNombreUserActionPerformed(evt);
+                TXTNombreUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(TXTNombreUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
+        getContentPane().add(TXTNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Registrar");
@@ -88,14 +89,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jLabel5.setText("Repite contraseña");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        getContentPane().add(TXTPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 200, -1));
-
-        TXTPassword2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTPassword2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TXTPassword2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
+        getContentPane().add(TXTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 200, -1));
+        getContentPane().add(TXTContrasena2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/515958.jpg"))); // NOI18N
@@ -108,13 +103,9 @@ public class AltaEmpleado extends javax.swing.JFrame {
     System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void TXTNombreUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTNombreUserActionPerformed
+    private void TXTNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTNombreUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TXTNombreUserActionPerformed
-
-    private void TXTPassword2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPassword2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXTPassword2ActionPerformed
+    }//GEN-LAST:event_TXTNombreUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,9 +145,9 @@ public class AltaEmpleado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BarrrasInferior;
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField TXTNombreUser;
-    private javax.swing.JPasswordField TXTPassword;
-    private javax.swing.JPasswordField TXTPassword2;
+    private javax.swing.JPasswordField TXTContrasena;
+    private javax.swing.JPasswordField TXTContrasena2;
+    private javax.swing.JTextField TXTNombreUsuario;
     private javax.swing.JLabel Título;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -165,13 +156,28 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 
-public String GetPassword2(){
-    return TXTPassword2.getText();
-}
-public String getPassword1(){
-    return TXTPassword.getText();
-}
-public String NombreUsuario(){
-    return TXTNombreUser.getText();
-}
+    public String obtenerContrasena2(){
+        String contrasena;
+        char[] temporal=TXTContrasena2.getPassword();
+        contrasena= new String(temporal);
+        return contrasena;
+    }
+    
+    public String obtenerContrasena1(){
+        String contrasena;
+        char[] temporal=TXTContrasena.getPassword();
+        contrasena= new String(temporal);
+        return contrasena;
+    }
+    
+    public String obtenerNombreUsuario(){
+        return TXTNombreUsuario.getText();
+    }
+    
+     public void agregarListenerBotonRegistrar(ActionListener evento){
+        jButton2.addActionListener(evento);
+    }
+    
+    
+    
 }

@@ -6,6 +6,7 @@
 package Vista;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -20,9 +21,61 @@ public class AltaCliente extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
- public Image getIconImage() {
+    
+    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/github-256-black.png"));
         return retValue;
+    }
+ 
+    
+    public void agregarListenerBotonCancelar(ActionListener evento){
+        jButton1.addActionListener(evento);
+    }
+   
+    public void agregarListenerBotonRegistrar(ActionListener evento){
+        jButton2.addActionListener(evento);
+    }
+    
+   
+   
+    public String obtenerDireccion(){
+        return Dir.getText();
+    } 
+    
+     
+    public String obtenerRazon(){
+        return Razon.getText();
+    }
+    
+    public String obtenerTel(){
+        return Tel.getText();
+    }
+    
+   
+    
+    
+    
+    public void establecerDireccion(String contenido){
+        Dir.setText(contenido);
+    } 
+    
+    public void establecerRFC(int numero){
+        String contenido= "C" + numero;
+        RFC.setText(contenido);
+    }
+    
+    public void establecerRazon(String contenido){
+        Razon.setText(contenido);
+    }
+    
+    public void establecerTel(String contenido){
+        Tel.setText(contenido);
+    }
+    
+    
+    
+    public void llenadoEtiqueta() {                                         
+        jLabel8.setText("*");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,10 +86,9 @@ public class AltaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         BarrrasInferior = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        nUser = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Título = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -54,30 +106,19 @@ public class AltaCliente extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("*");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 20, 20));
+
         jButton1.setBackground(new java.awt.Color(0, 204, 204));
         jButton1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jButton1.setText("Cancelar");
         jButton1.setAlignmentY(0.0F);
         jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 90, 20));
 
         BarrrasInferior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/franja1.png"))); // NOI18N
         getContentPane().add(BarrrasInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 390, 130));
-
-        jLabel1.setText("Nombre de Usuario:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        nUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Registrar");
@@ -93,6 +134,8 @@ public class AltaCliente extends javax.swing.JFrame {
 
         jLabel5.setText("RFC:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+
+        RFC.setEditable(false);
         getContentPane().add(RFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
         getContentPane().add(Dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, -1));
 
@@ -101,12 +144,6 @@ public class AltaCliente extends javax.swing.JFrame {
 
         jLabel7.setText("Telefono:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
-
-        Tel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TelActionPerformed(evt);
-            }
-        });
         getContentPane().add(Tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 200, -1));
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -115,18 +152,6 @@ public class AltaCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void TelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TelActionPerformed
-
-    private void nUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,27 +198,14 @@ public class AltaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel Título;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField nUser;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 
-public String GetDireccion(){
-    return Dir.getText();
-} 
-public String GetRFC(){
-    return RFC.getText();
-}
-public String GetRazon(){
-    return Razon.getText();
-}
-public String GetTel(){
-    return Tel.getText();
-}
-public String NombreUsuario(){
-    return nUser.getText();
-}
+    
+    
+    
 }

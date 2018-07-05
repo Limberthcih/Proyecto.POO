@@ -8,7 +8,8 @@ package Vista;
  *
  * @author limberth
  */
-import java.util.ArrayList;
+import java.awt.event.ActionListener;
+
 public class AltaVentas extends javax.swing.JFrame {
 
     /**
@@ -18,26 +19,64 @@ public class AltaVentas extends javax.swing.JFrame {
         initComponents();
         
     }
-    public void SetNombreUser(String Nombre){
-        TxtNombre.setText(Nombre);
+    public void activarCajaAgregarProducto(){
+        jTextField4.setEnabled(true);
     }
     
-    public void SetRFC(String RFC){
-        TxtRFC.setText(RFC);
+    public void desactivarCajaAgregarProducto(){
+        jTextField4.setEnabled(false);
     }
     
-    public void SetRazonSocial(String Razon){
-        TxtRazon.setText(Razon);
+    public void agregarListenerBotonAceptar(ActionListener evento){
+        jButton1.addActionListener(evento);
+    }
+   
+   public void agregarListenerBotonAgregarProducto(ActionListener evento){
+        jButton2.addActionListener(evento);
+    }
+   
+   
+    public String obtenerClaveProducto(){
+        return jTextField4.getText();
+    } 
+
+    
+    public void establecerIdVenta(int numero){
+        String contenido= "V"+numero; 
+        jTextField5.setText(contenido);
     }
     
-    public void SetTelefono(String Telefono){
-        TxtTelefono.setText(Telefono);
-    }
+    public void establecerRFC(String contenido){
+        jTextField5.setText(contenido);
+    } 
     
-    public void SetDireccion(String Direccion){
-        TxtDireccion.setText(Direccion);
-    }
+    public void establecerRazonSocial(String contenido){
+        jTextField6.setText(contenido);
+    } 
     
+    public void establecerDireccion(String contenido){
+        jTextField7.setText(contenido);
+    } 
+    
+    public void establecerTelefono(String contenido){
+        jTextField8.setText(contenido);
+    } 
+    
+    public void establecerSubtotal(String contenido){
+        jTextField1.setText(contenido);
+    } 
+    
+    public void establecerIVA(String contenido){
+        jTextField2.setText(contenido);
+    } 
+    
+    public void establecerTotal(String contenido){
+        jTextField3.setText(contenido);
+    } 
+    
+    public void cerrarVentana(){
+        System.exit(0);
+    }
    //* public void SetTabla(ArrayList<Venta> list){//aqui se agrega el nombre de la clase del modelo que se usará
     //    String Matriz[][]=new String[list.size()][1];
     //for (i=0;<list.size();i++){
@@ -53,64 +92,55 @@ public class AltaVentas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        TxtNombre = new javax.swing.JLabel();
-        TxtRFC = new javax.swing.JLabel();
-        TxtTelefono = new javax.swing.JLabel();
-        TxtDireccion = new javax.swing.JLabel();
-        TxtRazon = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1500, 1080));
+        setMinimumSize(new java.awt.Dimension(1000, 750));
+        setPreferredSize(new java.awt.Dimension(1000, 750));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Generar Ventas");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
-
-        jLabel4.setText("Nombre del Usuario:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-
         jLabel5.setText("RFC:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Datos del cliente");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+        jLabel1.setText("Datos del cliente:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 110, -1));
 
         jLabel6.setText("Razón social: ");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
 
         jLabel7.setText("Dirección:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
 
         jLabel8.setText("Teléfono:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, -1, -1));
 
-        TxtNombre.setText("ejemplo");
-        getContentPane().add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 250, 20));
-
-        TxtRFC.setText("ejemplo");
-        getContentPane().add(TxtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 250, 20));
-
-        TxtTelefono.setText("ejemplo");
-        getContentPane().add(TxtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 180, -1));
-
-        TxtDireccion.setText("ejemplo");
-        getContentPane().add(TxtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 180, -1));
-
-        TxtRazon.setText("ejemplo");
-        getContentPane().add(TxtRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 180, -1));
-
+        jTable1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
@@ -140,16 +170,78 @@ public class AltaVentas extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 720, 510));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 670, 460));
 
         jButton1.setText("Aceptar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 660, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 660, -1, -1));
 
+        jLabel3.setText("Subtotal:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, -1, -1));
+
+        jLabel2.setText("IVA\n");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, -1, -1));
+
+        jLabel4.setText("Total");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 610, -1, -1));
+
+        jTextField1.setEditable(false);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 610, 80, -1));
+
+        jTextField2.setEditable(false);
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 610, 80, -1));
+
+        jTextField3.setEditable(false);
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 80, -1));
+
+        jButton2.setText("+");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 40, -1));
+
+        jTextField4.setEnabled(false);
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, 80, -1));
+
+        jTextField5.setEditable(false);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, -1));
+
+        jTextField6.setEditable(false);
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 280, -1));
+
+        jTextField7.setEditable(false);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 140, -1));
+
+        jTextField8.setEditable(false);
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 350, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Alta Venta");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
+
+        jLabel10.setText("Id No.");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
+        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 30, 70, -1));
+
+        jButton3.setText("Cancelar\n");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 660, -1, -1));
+
+        Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/515958.jpg"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 750));
+        Fondo.setAutoscrolls(true);
+        Fondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Fondo.setMaximumSize(new java.awt.Dimension(1400, 1080));
+        Fondo.setMinimumSize(new java.awt.Dimension(1400, 1080));
+        Fondo.setPreferredSize(new java.awt.Dimension(1400, 1080));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,27 +274,41 @@ public class AltaVentas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AltaVentas().setVisible(true);
+                AltaVentas vista= new AltaVentas();
+                vista.setVisible(true);
+                vista.cerrarVentana();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JLabel TxtDireccion;
-    private javax.swing.JLabel TxtNombre;
-    private javax.swing.JLabel TxtRFC;
-    private javax.swing.JLabel TxtRazon;
-    private javax.swing.JLabel TxtTelefono;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    
+    
 }

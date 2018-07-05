@@ -8,9 +8,8 @@ package Controlador;
 import Vista.AltaCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import Modelo.Cliente;
-import Vista.Altas;
+import Vista.ControlAccionesEntidades;
 
 /**
  *
@@ -18,11 +17,11 @@ import Vista.Altas;
  */
 public class ControlClientes implements ControlAccionesAdicionales{
     private Cliente cliente;
-    private Altas vista;
+    private ControlAccionesEntidades vista;
     
     ControlClientes(int rfc, String claveVentana){
         this.cliente= new Cliente(rfc, "","","");
-        this.vista= new Altas();
+        this.vista= new ControlAccionesEntidades();
     }
 
       
@@ -54,9 +53,11 @@ public class ControlClientes implements ControlAccionesAdicionales{
         @Override
         public void actionPerformed(ActionEvent evento) {
             try{
-                cliente.establecerRazonSocial(vista.obtenerTextoCajaRazonSocial());
-                cliente.establecerDireccion(vista.obtenerTextoCajaDireccion());
-                cliente.establecerTelefono(vista.obtenerTextoCajaTelefono());
+                System.exit(0);
+                AltaCliente vista= new AltaCliente();
+                cliente.establecerRazonSocial(vista.obtenerRazon());
+                cliente.establecerDireccion(vista.obtenerDireccion());
+                cliente.establecerTelefono(vista.obtenerTel());
                 //comparacion razonsocial con archivos
                 //escritura en el archivo
             }catch(Exception excep){

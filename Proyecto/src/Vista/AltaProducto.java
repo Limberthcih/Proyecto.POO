@@ -6,6 +6,7 @@
 package Vista;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -36,7 +37,6 @@ public class AltaProducto extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         BarrrasInferior = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        nUser = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Título = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -44,7 +44,8 @@ public class AltaProducto extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Precio = new javax.swing.JTextField();
         Descripcion = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Clave = new javax.swing.JTextField();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,15 +68,8 @@ public class AltaProducto extends javax.swing.JFrame {
         BarrrasInferior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/franja1.png"))); // NOI18N
         getContentPane().add(BarrrasInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 390, 130));
 
-        jLabel1.setText("Nombre:");
+        jLabel1.setText("Descripción:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
-
-        nUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Registrar");
@@ -92,10 +86,13 @@ public class AltaProducto extends javax.swing.JFrame {
         jLabel5.setText("Precio unitario:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
         getContentPane().add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 200, -1));
-        getContentPane().add(Descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, -1));
+        getContentPane().add(Descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
-        jLabel6.setText("Descripcion:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        jLabel2.setText("Clave:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, 20));
+
+        Clave.setEditable(false);
+        getContentPane().add(Clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 130, 100, -1));
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/515958.jpg"))); // NOI18N
@@ -107,10 +104,6 @@ public class AltaProducto extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void nUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +143,7 @@ public class AltaProducto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BarrrasInferior;
     private javax.swing.JTextField Cantidad;
+    private javax.swing.JTextField Clave;
     private javax.swing.JTextField Descripcion;
     private javax.swing.JLabel Fondo;
     private javax.swing.JTextField Precio;
@@ -157,23 +151,46 @@ public class AltaProducto extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField nUser;
     // End of variables declaration//GEN-END:variables
 
-public String GetDescripcion(){
-    return Descripcion.getText();
-} 
-public String GetPrecio(){
-    return Precio.getText();
-}
-public String GetCantidad(){
-    return Cantidad.getText();
+      
+    public String obtenerDescripcion(){
+        return Descripcion.getText();
+    } 
+    public String obtenerPrecio(){
+      return Precio.getText();
+    }
+    public String obtenerCantidad(){
+        return Cantidad.getText();
+    }
+       
+    
+    public void agregarListenerBotonRegistrar(ActionListener evento){
+        jButton2.addActionListener(evento);
+    }
+   
+   public void agregarListenerBotonCancelar(ActionListener evento){
+        jButton1.addActionListener(evento);
+    }
 
-}
-public String GetNombre(){
-    return nUser.getText();
-}
+    
+    public void establecerClave(int numero){
+        String contenido= "P"+numero;
+        Clave.setText(contenido);
+    }  
+   
+   public void establecerDescripcion(String contenido){
+        Descripcion.setText(contenido);
+    } 
+    
+    public void establecerPrecio(String contenido){
+        Precio.setText(contenido);
+    }
+    public void establecerCantidad(String contenido){
+        Cantidad.setText(contenido);
+    }
+
 }
