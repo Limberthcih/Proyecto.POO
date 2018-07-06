@@ -1,6 +1,9 @@
 package Controlador;
-
+import java.util.ArrayList;
 import Proyecto.Vista.Bajas;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ControlBajaVentas{
@@ -26,7 +29,7 @@ public class ControlBajaVentas{
         }catch(Exception e){
             System.out.println(ex.getMessage());  
         }finally{
-            bw.close();
+            br.close();
             buscador.clear();
         }
     }

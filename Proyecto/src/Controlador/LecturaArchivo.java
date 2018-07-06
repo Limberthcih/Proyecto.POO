@@ -4,19 +4,20 @@ import java.io.*;
 import java.util.ArrayList;
 
 
-public class LecturaArchivos{
+public class LecturaArchivo{
     private String Archivo;
     private ArrayList<String> ed;
     
-    public ArrayList<Archivo> LeerArchivo(String nombre){
+    public ArrayList<String> LeerArchivo(){
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
  
         try {
+                        ArrayList<String> ed = new ArrayList<>();
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			archivo = new File (nombre);
+			archivo = new File ("archivo.txt");
 			fr = new FileReader (archivo);
 			br = new BufferedReader(fr);
  
@@ -42,15 +43,15 @@ public class LecturaArchivos{
     }
     
     
-    public void EscrituraArchivo(String Archivo, String nombre){
+    public void EscrituraArchivo(String Archivo){
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
         {
-        	fichero = new FileWriter(nombre);
+        	fichero = new FileWriter("archivo.txt");
            	pw = new PrintWriter(fichero);
  
-           	System.out.println("Escribiendo en el archivo");
+           	System.out.println("Escribiendo en el archivo.txt");
            	pw.println(Archivo);
  
         } catch (Exception e) {
