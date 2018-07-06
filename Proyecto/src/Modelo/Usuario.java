@@ -31,6 +31,7 @@ public class Usuario {
     public String obtenerContrasena() {
         return  contrasena;
     }
+    
     public boolean equals(String otroNombre){
         boolean bandera=false;
         if(this.nombre.equals(otroNombre)){
@@ -38,4 +39,10 @@ public class Usuario {
         }
         return bandera;
     }
+    
+    public String toString(){
+        return nombre+","+contrasena;
+    }
+    
+    
 }

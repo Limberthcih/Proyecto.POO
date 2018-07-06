@@ -6,6 +6,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
@@ -98,14 +99,45 @@ public class Venta {
         productos.add(producto);
     }
     
-    public int buscarProducto(){
-       
-       return 0;
+    public int buscarProducto(String clave){
+       int i;
+       for(i=0; i<productos.size();i++){
+           if(clave.equals(productos.get(i).obtenerClave())){
+               break;
+           }
+       }
+       if(i>=productos.size()){
+           i=-1;
+       }
+       return i;
     }
     
-    public void eliminarProducto(){
-        
+    public void eliminarProducto(String clave){
+        int i;
+        i=this.buscarProducto(clave);
+        if(i>-1){
+            productos.remove(i);
+        }
     }
+   
+    public String stringFecha(){
+        String contenido;
+        contenido= fecha.get(Calendar.DAY_OF_MONTH)+"/"+(fecha.get(Calendar.MONTH)+1)+"/"+fecha.get(Calendar.YEAR);
+        return contenido;
+    }
+       
+    public String stringProductos(){
+       String cadenaProductos="";
+       for(int i=0; i<productos.size(); i++){
+           cadenaProductos= productos.get(i).toString()+",";
+       }
+       return cadenaProductos;
+    }
+    
+    public String toString(){
+        return id+","+this.stringFecha()+","+cliente.toString()+","+subtotal+","+iva+","+total+","+this.stringProductos();
+    }
+    
     
     /*public boolean equals(Object objeto){
         boolean bandera=false;

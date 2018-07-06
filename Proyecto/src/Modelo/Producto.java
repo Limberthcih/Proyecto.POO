@@ -58,4 +58,7 @@ public class Producto {
         return bandera;
     }
    
+    public String toString(){
+        return clave+","+descripcion+","+cantidad+","+precioUnitario;
+    }
 }

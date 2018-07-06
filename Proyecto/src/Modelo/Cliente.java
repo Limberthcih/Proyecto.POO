@@ -65,4 +65,8 @@ public class Cliente {
         }
         return bandera;
     }
+    
+    public String toString(){
+        return rfc+","+razonSocial+","+direccion+","+telefono;
+    }
 }
